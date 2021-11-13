@@ -8,7 +8,6 @@ function DrawBar(props) {
   const confirmedCnt = props.confirmedCnt;
   const onClickAction = props.onClick;
   const ratio = props.ratio;
-
   const fullweek = props.fullweek;
   const week = props.week;
   const year = props.year;
@@ -16,6 +15,8 @@ function DrawBar(props) {
   const [color, setColor] = useState('#ffffff');
   const [movie, setMovie] = useState([]);
   const [show, setShow] = useState([]);
+
+  console.log(confirmedCnt, ratio)
 
   const contentList = useSelector((state) => {
     return state.topContentList.topContent;
@@ -41,9 +42,7 @@ function DrawBar(props) {
 
 
   return (
-    <>
-      <ReactHover options={optionsCursorTrueWithMargin}>
-        <Trigger>
+    <div className="BarrContainer">
           <Bar
             confirmedCnt={confirmedCnt}
             ratio={ratio}
@@ -57,33 +56,20 @@ function DrawBar(props) {
               }
             }}
           ></Bar>
-        </Trigger>
-        <Hover>
-          <TimelineHoverBox
-            nation={props.nation}
-            nationCode={props.nationCode}
-            fullWeek={fullweek}
-            movie={movie}
-            show={show}
-            confirmedCnt={parseInt(confirmedCnt ** 2)}
-          />
-        </Hover>
-      </ReactHover>
-    </>
+    </div>
   );
-}
+} 
 
 export default DrawBar;
 
 const Bar = styled.div`
-width: 12px;
-height: ${(props) => Math.round(props.confirmedCnt / props.ratio)}px;
-margin-top: ${(props) => 280 - Math.round(props.confirmedCnt / props.ratio) / 2}px;
-background-color: ${(props) => props.color};
-cursor: pointer;
-border-radius: 60px 60px;
-
-&:hover {
-  opacity: 0.7;
-}
+  width: 12px;
+  height: ${(props) => Math.round(props.confirmedCnt / props.ratio)}px;
+  margin-top: ${(props) => 280 - Math.round(props.confirmedCnt / props.ratio) / 2}px;
+  background-color: ${(props) => props.color};
+  cursor: pointer;
+  border-radius: 60px 60px;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
