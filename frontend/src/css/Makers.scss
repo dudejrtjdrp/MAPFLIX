@@ -109,3 +109,17 @@ $body-font: "Maven Pro", sans-serif;
 .Profile:hover{
     border: 3px solid white;
 }
+
+@media (max-width: 992px)
+{
+    .Team{
+        font-family: $title-font;
+        color:white;
+        font-size:50px;
+        padding-top: 50px;
+        text-align:center;
+        font-size: 70px;
+        font-weight: 500;
+        letter-spacing: 6px;
+       }
+}

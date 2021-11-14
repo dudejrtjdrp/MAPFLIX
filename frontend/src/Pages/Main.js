@@ -4,6 +4,7 @@ import Map from "../Components/Map";
 import { BsCircleFill } from "react-icons/bs";
 import "../css/main.scss";
 import MapHoverGreen from "../Components/MapHoverGreen";
+import Navbar from "../NavBar";
 
 const Main = ({ history }) => {
   return (
@@ -11,10 +12,14 @@ const Main = ({ history }) => {
       <div className="header">
         <img src={Title_logo} alt="" />
         <p className="Explanation_text">
-            How many Netflix subscribers have increased before and after
-            Covid-19? <br />
-            We'll show you the top 10 contents of weekly Netflix in each
-            country.
+            <p className="ExplanationText1">
+              How many Netflix subscribers have increased before and after
+              Covid-19? 
+            </p>
+            <p className="ExplanationText2">
+              We'll show you the top 10 contents of weekly Netflix in each
+              country.
+            </p>
           </p>
       </div>
       <div className='mainBackground'>

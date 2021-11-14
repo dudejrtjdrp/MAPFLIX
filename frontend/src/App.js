@@ -11,7 +11,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div style={{ backgroundColor: "#111111", height: "100vh" }}>
-          <NavBar />
+        <NavBar />
+          <div></div>
           <BrowserRouter>
             <Route path="/" exact component={Main} />
             <Switch>
